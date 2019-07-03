@@ -1,11 +1,14 @@
 applications:
 - name: tracker-registration
-  path: ./applications/registration-server/build/libs/registration-server.jar
-  routes:
-  - route: registration-pal-{UNIQUE_IDENTIFIER}.apps.chicken.pal.pivotal.io
-  memory: 1G
-  instances: 1
-  env:
-    JBP_CONFIG_OPEN_JDK_JRE: '{ jre: { version: 11.+ } }'
-  services:
-  - tracker-registration-database
+    path: ./applications/registration-server/build/libs/registration-server.jar
+    routes:
+      - route: registration-saranya-santosh.cfapps.io
+    instances: 1
+    memory: 475M
+    disk_quota: 475M
+    env:
+      JBP_CONFIG_OPEN_JDK_JRE: '{ jre: { version: 11.+ }, memory_calculator: { stack_threads: 100} }'
+      JAVA_OPTS: '-Xms64m -Xmx256m'
+      GRANT_TYPE: client_credentials
+    services:
+      - tracker-registration-database
