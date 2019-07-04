@@ -1,15 +1,15 @@
 applications:
-  - name: tracker-allocations
-    path: ./applications/allocations-server/build/libs/allocations-server.jar
-    routes:
-      - route: allocations-saranya-santosh.cfapps.io
-    instances: 1
-    memory: 475M
-    disk_quota: 475M
-    env:
-      REGISTRATION_SERVER_ENDPOINT: http://registration-saranya-santosh.cfapps.io
-      JBP_CONFIG_OPEN_JDK_JRE: '{ jre: { version: 11.+ }, memory_calculator: { stack_threads: 100} }'
-      JAVA_OPTS: '-Xms64m -Xmx256m'
-      GRANT_TYPE: client_credentials
-    services:
-      - tracker-allocations-database
+- name: tracker-allocations
+  path: ./applications/allocations-server/build/libs/allocations-server.jar
+  routes:
+  - route: allocations-saranya-santosh.cfapps.io
+  instances: 1
+  memory: 475M
+  disk_quota: 475M
+  env:
+    REGISTRATION_SERVER_ENDPOINT: http://registration-saranya-santosh.cfapps.io
+    JBP_CONFIG_OPEN_JDK_JRE: '{ jre: { version: 11.+ }, memory_calculator: { stack_threads: 100} }'
+    JAVA_OPTS: '-Xms64m -Xmx256m'
+    GRANT_TYPE: client_credentials
+  services:
+  - tracker-allocations-database
