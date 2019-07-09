@@ -2,7 +2,7 @@ applications:
 - name: tracker-backlog
   path: ./applications/backlog-server/build/libs/backlog-server.jar
   routes:
-  - route: backlog-saranya-santosh.cfapps.io
+  - route: backlog-saranya-santosh-sa.cfapps.io
   instances: 1
   memory: 475M
   disk_quota: 475M
@@ -14,3 +14,4 @@ applications:
   - tracker-backlog-database
   - tracker-service-registry
   - tracker-circuit-breaker-dashboard
+  - tracker-sso

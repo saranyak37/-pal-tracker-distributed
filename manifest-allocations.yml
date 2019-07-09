@@ -2,7 +2,7 @@ applications:
 - name: tracker-allocations
   path: ./applications/allocations-server/build/libs/allocations-server.jar
   routes:
-  - route: allocations-saranya-santosh.cfapps.io
+  - route: allocations-saranya-santosh-sa.cfapps.io
   instances: 1
   memory: 475M
   disk_quota: 475M
@@ -14,3 +14,4 @@ applications:
   - tracker-allocations-database
   - tracker-service-registry
   - tracker-circuit-breaker-dashboard
+  - tracker-sso
