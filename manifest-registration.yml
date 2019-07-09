@@ -2,7 +2,7 @@ applications:
 - name: tracker-registration
   path: ./applications/registration-server/build/libs/registration-server.jar
   routes:
-  - route: registration-saranya-santosh-sa.cfapps.io
+  - route: registration-saranya-santosh-testDB.cfapps.io
   instances: 1
   memory: 475M
   disk_quota: 475M
@@ -10,7 +10,9 @@ applications:
     JBP_CONFIG_OPEN_JDK_JRE: '{ jre: { version: 11.+ }, memory_calculator: { stack_threads: 100} }'
     JAVA_OPTS: '-Xms64m -Xmx256m'
     GRANT_TYPE: client_credentials
+    MANAGEMENT_ENDPOINTS_WEB_EXPOSURE_INCLUDE: *
   services:
   - tracker-registration-database
   - tracker-service-registry
   - tracker-sso
+  - tracker-config-server
